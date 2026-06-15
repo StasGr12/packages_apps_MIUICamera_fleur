@@ -1,0 +1,680 @@
+android_app_import {
+    name: "MIUICamera",
+    apk: "MiuiCamera.apk",
+    privileged: true,
+    presigned: true,
+    compile_multilib: "64",
+    dex_preopt: { enabled: false },
+    preprocessed: true,
+    required: [
+        "MIUICamera_libSNPE",
+        "MIUICamera_libcamera_algoup_jni",
+        "MIUICamera_libsnpe_dsp_domains_v2",
+        "MIUICamera_libsnpe_dsp_skel",
+        "MIUICamera_libsnpe_dsp_v65_domains_v2_skel",
+        "MIUICamera_libsnpe_dsp_v66_domains_v2_skel",
+        "MIUICamera_libsymphony_cpu",
+        "MIUICamera_libmiocr_wrapper",
+    ],
+    overrides: ["Camera2", "Aperture"],
+}
+
+android_app_import {
+    name: "MiuiExtraPhoto",
+    owner: "xiaomi",
+    apk: "MiuiExtraPhoto.apk",
+    privileged: true,
+    presigned: true,
+    compile_multilib: "64",
+    dex_preopt: { enabled: false },
+    preprocessed: true,
+    required: [
+        "ExtraPhoto_libauto_crop_cpp_shared",
+        "ExtraPhoto_libautocrop",
+        "ExtraPhoto_libcommon",
+        "ExtraPhoto_libcpp_shared",
+        "ExtraPhoto_libdoc_photo_cpp_shared",
+        "ExtraPhoto_libdoc_photo_process",
+        "ExtraPhoto_libdoc_photo",
+        "ExtraPhoto_libgallery_arcsoft_dualcam_refocus",
+        "ExtraPhoto_libgallery_arcsoft_portrait_lighting_c",
+        "ExtraPhoto_libgallery_arcsoft_portrait_lighting",
+        "ExtraPhoto_libgallery_mpbase",
+        "ExtraPhoto_libmegvii_bokeh_jni",
+        "ExtraPhoto_libmialgo_ai_vision",
+        "ExtraPhoto_libmialgo_autocrop",
+        "ExtraPhoto_libmialgo_portrait",
+        "ExtraPhoto_libmialgo_utils_extraphoto",
+        "ExtraPhoto_libmialgo_utils",
+        "ExtraPhoto_libmibokeh_gallery",
+        "ExtraPhoto_libmibrain_relighting_jni",
+        "ExtraPhoto_libmicamera_dual_bokeh_jni",
+        "ExtraPhoto_libmiphone_bokeh_dynSpot",
+        "ExtraPhoto_libmiphone_bokeh_effect",
+        "ExtraPhoto_libmiphone_bokeh_gpf",
+        "ExtraPhoto_libmiphone_bokeh_proc",
+        "ExtraPhoto_libmiphone_refocus_bokeh",
+        "ExtraPhoto_libmisr",
+        "ExtraPhoto_libmiuiblursdk",
+        "ExtraPhoto_libMNN",
+        "ExtraPhoto_libmotion_photo_cpp_shared",
+        "ExtraPhoto_libmotion_photo_mace",
+        "ExtraPhoto_libmotion_photo",
+        "ExtraPhoto_librefocus_meitu",
+        "ExtraPhoto_librefocus_mibokeh",
+        "ExtraPhoto_librefocus",
+        "ExtraPhoto_libselection",
+        "ExtraPhoto_libwa_refocus_extraphoto",
+        "ExtraPhoto_libxcrash_dumper",
+        "ExtraPhoto_libxcrash",
+        "ExtraPhoto_libyuv",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "MIUICamera_libSNPE",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libSNPE.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "MIUICamera_libcamera_algoup_jni",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libcamera_algoup_jni.xiaomi.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "MIUICamera_libsnpe_dsp_domains_v2",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libsnpe_dsp_domains_v2.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "MIUICamera_libsnpe_dsp_skel",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libsnpe_dsp_skel.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "MIUICamera_libsnpe_dsp_v65_domains_v2_skel",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libsnpe_dsp_v65_domains_v2_skel.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "MIUICamera_libsnpe_dsp_v66_domains_v2_skel",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libsnpe_dsp_v66_domains_v2_skel.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "MIUICamera_libsymphony_cpu",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libsymphony-cpu.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "MIUICamera_libmiocr_wrapper",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmiocr_wrapper.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libauto_crop_cpp_shared",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libauto_crop_c++_shared.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libautocrop",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libautocrop.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libcommon",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libcommon.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libcpp_shared",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libc++_shared.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libdoc_photo_cpp_shared",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libdoc_photo_c++_shared.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libdoc_photo_process",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libdoc_photo_process.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libdoc_photo",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libdoc_photo.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libgallery_arcsoft_dualcam_refocus",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libgallery_arcsoft_dualcam_refocus.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libgallery_arcsoft_portrait_lighting_c",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libgallery_arcsoft_portrait_lighting_c.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libgallery_arcsoft_portrait_lighting",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libgallery_arcsoft_portrait_lighting.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libgallery_mpbase",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libgallery_mpbase.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmegvii_bokeh_jni",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmegvii_bokeh_jni.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmialgo_ai_vision",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmialgo_ai_vision.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmialgo_autocrop",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmialgo_autocrop.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmialgo_portrait",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmialgo_portrait.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmialgo_utils_extraphoto",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmialgo_utils_extraphoto.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmialgo_utils",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmialgo_utils.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmibokeh_gallery",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmibokeh_gallery.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmibrain_relighting_jni",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmibrain_relighting_jni.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmicamera_dual_bokeh_jni",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmicamera_dual_bokeh_jni.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmiphone_bokeh_dynSpot",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmiphone_bokeh_dynSpot.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmiphone_bokeh_effect",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmiphone_bokeh_effect.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmiphone_bokeh_gpf",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmiphone_bokeh_gpf.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmiphone_bokeh_proc",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmiphone_bokeh_proc.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmiphone_refocus_bokeh",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmiphone_refocus_bokeh.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmisr",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmisr.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmiuiblursdk",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmiuiblursdk.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libMNN",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libMNN.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmotion_photo_cpp_shared",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmotion_photo_c++_shared.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmotion_photo_mace",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmotion_photo_mace.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libmotion_photo",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libmotion_photo.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_librefocus_meitu",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/librefocus_meitu.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_librefocus_mibokeh",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/librefocus_mibokeh.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_librefocus",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/librefocus.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libselection",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libselection.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libwa_refocus_extraphoto",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libwa_refocus_extraphoto.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libxcrash_dumper",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libxcrash_dumper.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libxcrash",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libxcrash.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "ExtraPhoto_libyuv",
+    owner: "xiaomi",
+    srcs: ["lib/arm64/libyuv.so"],
+    compile_multilib: "64",
+    prefer: true,
+    strip: { none: true },
+    system_shared_libs: [],
+    stl: "none",
+    check_elf_files: false,
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-miuicamera.xml",
+    owner: "xiaomi",
+    src: "config/privapp-permissions-miuicamera.xml",
+    sub_dir: "permissions",
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "miuicamera-hiddenapi-package-whitelist.xml",
+    owner: "xiaomi",
+    src: "config/miuicamera-hiddenapi-package-whitelist.xml",
+    sub_dir: "sysconfig",
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "android.hardware.camera.flash-autofocus.xml",
+    src: "config/android.hardware.camera.flash-autofocus.xml",
+    sub_dir: "permissions",
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "android.hardware.camera.front.xml",
+    src: "config/android.hardware.camera.front.xml",
+    sub_dir: "permissions",
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "android.hardware.camera.full.xml",
+    src: "config/android.hardware.camera.full.xml",
+    sub_dir: "permissions",
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "android.hardware.camera.raw.xml",
+    src: "config/android.hardware.camera.raw.xml",
+    sub_dir: "permissions",
+    filename_from_src: true,
+}
